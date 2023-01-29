@@ -47,9 +47,7 @@ def _binary_search(mylist, key, left, right):
 	  return _binary_search(mylist,key,left,mid-1)
 	else:
 	  return _binary_search(mylist,key,mid+1,right)
-	
-	### TODO
-	### TODO
+
 	###
 
 def test_binary_search():
@@ -57,7 +55,8 @@ def test_binary_search():
 	assert binary_search([1,2,3,4,5], 1) == 0
 	assert binary_search([1,2,3,4,5], 6) == -1
 	### TODO: add two more tests here.
-  
+	assert binary_search([1,2,3,4,5], 3) == 2
+	assert binary_search([1,2,3,4,5], 2) == 1
 	###
 
 
