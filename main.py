@@ -10,8 +10,8 @@ import time
 def linear_search(mylist, key):
 	""" done. """
 	for i,v in enumerate(mylist):
-		if v == key:
-			return i
+				if v == key:
+						return i
 	return -1
 
 def test_linear_search():
@@ -38,16 +38,18 @@ def _binary_search(mylist, key, left, right):
 	  index of key in mylist, or -1 if not present.
 	"""
 	### TODO
-  mid = (high + low)//2
-  if(left>right):
-    return -1
-  mid=(high+low)//2
-  if key == mylist[mid]:
-    return mid
-  elif(x < mylist[mid]):
-    return _binary_search(mylist,x,left,mid-1,)
-  else:
-    return _binary_search(mylist,x,mid+1,high)
+	mid = (left+right)//2
+	if (left>right):  
+	  return -1;
+	if(key==mylist[mid]):
+	  return mid
+	elif(key<mylist[mid]):
+	  return _binary_search(mylist,key,left,mid-1)
+	else:
+	  return _binary_search(mylist,key,mid+1,right)
+	
+	### TODO
+	### TODO
 	###
 
 def test_binary_search():
