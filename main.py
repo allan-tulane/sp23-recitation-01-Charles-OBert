@@ -102,16 +102,27 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	  for each method to run on each value of n
 	"""
 	### TODO
-	arraylist = []
-	for i in sizes:
-		arraylist.append(mylist=range(sizes[i]))
+	def createList(n):
+		lst = []
+		for i in range(n+1):
+			return(lst)
 
-	binary_list =[None]*len(sizes)
-	for i in enumerate(binary_list):
-		binary_list[i] = (mylist=range(sizes[i]))
-		
-		
-	res = [(val,time_search(linear_search(arraylist[val],-1)),time_search(binary_search(arraylist[val],-1))) for val in sizes]
+	array_list =[]
+	for i in array_list:
+		array_list.append(createList(sizes[i]))
+	blist_times =[]
+	for i in blist_times:
+		blist_times.append( time_search(binary_search(array_list[i]),-1))
+	linlist_times =[]
+	print("Blist times: ",blist_times)
+	for i in linlist_times:
+		linlist_times.append( time_search(linear_search(array_list[i]),-1))
+	print("linlist times: ",linlist_times)
+
+	#zip
+	#res = zip(sizes,linlist_times,blist_times)
+	#res = [(val,time_search(linear_search(arraylist[val],-1)),time_search(binary_search(arraylist[val],-1))) for val in sizes]
+	res = [(val,linlist_times,blist_times) for val in sizes]
 	return res;
 	###
 
