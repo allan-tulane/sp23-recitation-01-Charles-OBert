@@ -114,11 +114,9 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	for i in range(len(sizes)):
 		blist_times.append(time_search(binary_search,array_list[i],-1))
 	linlist_times =[]
-	print("Blist times: ",blist_times)
 	for i in range(len(sizes)):
 		linlist_times.append(time_search(linear_search,array_list[i],-1))
-	print("linlist times: ",linlist_times)
-	#res = [(val,time_search(linear_search,array_list[val],-1),time_search(binary_search,array_list[val],-1)) for val in sizes]
+
 	res = [(sizes[val],linlist_times[val],blist_times[val]) for val in range(len(sizes))]
 	return res;
 	###
