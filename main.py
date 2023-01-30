@@ -102,7 +102,17 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	  for each method to run on each value of n
 	"""
 	### TODO
+	arraylist = []
+	for i in sizes:
+		arraylist.append(mylist=range(sizes[i]))
 
+	binary_list =[None]*len(sizes)
+	for i in enumerate(binary_list):
+		binary_list[i] = (mylist=range(sizes[i]))
+		
+		
+	res = [(val,time_search(linear_search(arraylist[val],-1)),time_search(binary_search(arraylist[val],-1))) for val in sizes]
+	return res;
 	###
 
 def print_results(results):
