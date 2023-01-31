@@ -90,7 +90,9 @@ def time_search(search_fn, mylist, key):
   seconds = end - beg
   return seconds * 1000
   ###
-
+def createList(n): #creates a list of numbers from 0 to n-1
+	lst=list(range(int(n)))
+	return lst
 
 def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
   """
@@ -115,24 +117,25 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
       #return (lst)
 
 ###################################################
-  #array_list = []
-  #for i in range(len(sizes)):
-   # array_list.append(createList(sizes[i]))
-  #blist_times = []
-  #for i in range(len(sizes)):
-   # blist_times.append(time_search(binary_search, array_list[i], -1))
-  #linlist_times = []
-  #for i in range(len(sizes)):
-   # linlist_times.append(time_search(linear_search, array_list[i], -1))
-
-  #res = [(sizes[val], linlist_times[val], blist_times[val])
-         #for val in range(len(sizes))]
-  #return res
-  ###
-  res=[]
+  array_list = []
   for i in range(len(sizes)):
-	  res.append(tuple(sizes[i],time_search(linear_search,createList[sizes[i]],-1),time_search(binary_search,createList[sizes[i]],-1)))
+  	array_list.append(createList(sizes[i]))
+  blist_times = []
+  for i in range(len(sizes)):
+    blist_times.append(time_search(binary_search, array_list[i], -1))
+  linlist_times = []
+  for i in range(len(sizes)):
+    linlist_times.append(time_search(linear_search, array_list[i], -1))
+
+  res = [(int(sizes[val]), linlist_times[val], blist_times[val])
+         for val in range(len(sizes))]
+  print(res)
   return res
+  ###
+  #res=[]
+  #for i in range(len(sizes)):
+	  #res.append(tuple(sizes[i],time_search(linear_search,createList[sizes[i]],-1),time_search(binary_search,createList[sizes[i]],-1)))
+  #return res
 
 
 
@@ -140,10 +143,7 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	
 
 
-##print(compare_search())
-def createList(n): #creates a list of numbers from 0 to n-1
-	lst=list(range(n))
-	return lst
+print(compare_search())
 
 
 def print_results(results):
