@@ -111,12 +111,7 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	"""
 
   ### TODO
- # def createList(n):
-		#lst = []
-    #for i in range(n + 1):
-      #return (lst)
 
-###################################################
   array_list = []
   for i in range(len(sizes)):
   	array_list.append(createList(sizes[i]))
@@ -131,20 +126,6 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
          for val in range(len(sizes))]
   print(res)
   return res
-  ###
-  #res=[]
-  #for i in range(len(sizes)):
-	  #res.append(tuple(sizes[i],time_search(linear_search,createList[sizes[i]],-1),time_search(binary_search,createList[sizes[i]],-1)))
-  #return res
-
-
-
-
-	
-
-
-print(compare_search())
-
 
 def print_results(results):
   """ done """
